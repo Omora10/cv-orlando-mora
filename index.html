@@ -1,383 +1,228 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hoja de Vida — Orlando Mora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoja de Vida - Orlando Mora</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg: #f7fafc;
-      --card: #ffffff;
-      --accent: #0f3d5b; /* azul marino profesional */
-      --muted: #6b7280; /* gris */
-      --line: #e6eef3;
-      --success: #0b7a4a;
-      --max-width: 960px;
-      --gap: 18px;
+<style>
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background: #f4f4f4;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      color:#111827;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:32px;
-      display:flex;
-      justify-content:center;
+    .container {
+        width: 900px;
+        margin: auto;
+        background: #fff;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        min-height: 100vh;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     }
 
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-      background:linear-gradient(0deg, rgba(255,255,255,0.75), rgba(255,255,255,0.75));
-      border-radius:12px;
-      box-shadow:0 8px 30px rgba(15,61,91,0.08);
-      overflow:hidden;
-      display:flex;
-      gap:0;
+    /* LADO IZQUIERDO */
+    .left {
+        background: #e8eef3;
+        padding: 40px 30px;
     }
 
-    /* Layout */
-    .sidebar{
-      width:300px;
-      min-width:240px;
-      background:linear-gradient(180deg, var(--card), #fbfdff);
-      padding:28px;
-      border-right:1px solid var(--line);
-    }
-    .main{
-      flex:1;
-      padding:28px 36px;
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+        border: 5px solid #fff;
+        box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
     }
 
-    /* Header */
-    .name{
-      font-size:22px;
-      font-weight:700;
-      color:var(--accent);
-      margin:0 0 6px 0;
-      letter-spacing: -0.2px;
-    }
-    .title{
-      margin:0;
-      font-size:13px;
-      color:var(--muted);
-      font-weight:600;
+    .section-title {
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        color: #2d4a60;
+        font-size: 16px;
+        letter-spacing: 1px;
     }
 
-    /* Contact */
-    .contact{
-      margin-top:18px;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .contact p{margin:8px 0; display:flex; gap:8px; align-items:center}
-    .tag{
-      display:inline-block;
-      background:rgba(15,61,91,0.06);
-      color:var(--accent);
-      padding:6px 8px;
-      font-size:12px;
-      border-radius:6px;
-      font-weight:600;
-      margin-top:10px;
+    .left ul {
+        padding-left: 18px;
+        margin-top: 5px;
     }
 
-    hr.soft{
-      border:0;
-      border-top:1px solid var(--line);
-      margin:18px 0;
+    .left ul li {
+        margin-bottom: 6px;
+        font-size: 13px;
     }
 
-    /* Sections */
-    h3.section-title{
-      margin:0 0 12px 0;
-      font-size:13px;
-      color:var(--accent);
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:0.9px;
+    /* LADO DERECHO */
+    .right {
+        padding: 40px 50px;
     }
 
-    .skill-list, .soft-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:grid;
-      gap:8px;
-    }
-    .skill-item{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      font-size:13px;
-      color:#0f1724;
-    }
-    .skill-bar{
-      height:8px;
-      background:var(--line);
-      border-radius:999px;
-      width:100%;
-      overflow:hidden;
-      margin-left:10px;
-    }
-    .skill-bar > i{
-      display:block;
-      height:100%;
-      background:linear-gradient(90deg,var(--accent), #2a8fb7);
-      width:60%;
+    .name {
+        font-size: 42px;
+        font-weight: 700;
+        color: #2d4a60;
+        margin-bottom: -5px;
     }
 
-    /* Main content blocks */
-    .profile{
-      margin-bottom:18px;
-      color:#0f1724;
-      line-height:1.45;
-      font-size:14px;
+    .subtitle {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555;
     }
 
-    .job{
-      margin-bottom:16px;
-    }
-    .job .job-title{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:flex-start;
-    }
-    .job h4{
-      margin:0;
-      font-size:15px;
-      color:#0b1320;
-      font-weight:700;
-    }
-    .job .period{
-      font-size:13px;
-      color:var(--muted);
-      white-space:nowrap;
-    }
-    .job p{margin:8px 0 0 0; color:#111827; font-size:14px}
-    .job ul{margin:8px 0 0 16px 18px; color:#111827; font-size:14px}
-
-    .tag-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:8px;
-    }
-    .chip{
-      background:rgba(15,61,91,0.06);
-      color:var(--accent);
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:13px;
+    .section {
+        margin-top: 35px;
     }
 
-    /* Two-column responsive behavior */
-    @media (max-width:880px){
-      .container{flex-direction:column; padding:0}
-      .sidebar{width:100%; min-width:unset; border-right:0; border-bottom:1px solid var(--line);}
-      .main{padding:20px}
+    .section h2 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #2d4a60;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #e0e6eb;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
     }
 
-    /* Print */
-    @media print{
-      body{background:#fff; padding:0}
-      .container{box-shadow:none; border-radius:0}
-      .sidebar{background:#fff}
-      .chip, .tag{display:inline-block}
+    .job-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #2d4a60;
     }
-  </style>
+
+    .job-company {
+        font-size: 14px;
+        color: #444;
+        margin-bottom: 8px;
+    }
+
+    .job ul {
+        padding-left: 18px;
+    }
+
+    .job ul li {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+</style>
 </head>
+
 <body>
-  <div class="container" role="main" aria-label="Hoja de Vida Orlando Mora">
-    <!-- SIDEBAR -->
-    <aside class="sidebar" aria-labelledby="profile-name">
-      <h1 id="profile-name" class="name">Orlando Mora</h1>
-      <p class="title">Ingeniero de Sistemas — Transformación Digital & Desarrollo Web</p>
 
-      <div class="contact" aria-label="Contacto">
-        <p><strong>Email:</strong>&nbsp;<a href="mailto:Moradostin27@gmail.com">Moradostin27@gmail.com</a></p>
-        <p><strong>Tel:</strong>&nbsp;322 243 8349</p>
-        <div class="tag">Especialización en Seguridad (UNIR) — En curso</div>
-      </div>
+<div class="container">
 
-      <hr class="soft" />
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <img src="https://i.imgur.com/1Q9Z1Zl.png" class="profile-pic">
 
-      <section aria-labelledby="skills-title">
-        <h3 id="skills-title" class="section-title">Habilidades Técnicas</h3>
-        <ul class="skill-list" aria-hidden="false">
-          <li class="skill-item">
-            <span>HTML · CSS · JavaScript</span>
-            <div style="width:120px; margin-left:12px" class="skill-bar"><i style="width:85%"></i></div>
-          </li>
-          <li class="skill-item">
-            <span>Angular · React</span>
-            <div class="skill-bar" style="width:120px"><i style="width:70%"></i></div>
-          </li>
-          <li class="skill-item">
-            <span>Java · PHP</span>
-            <div class="skill-bar" style="width:120px"><i style="width:65%"></i></div>
-          </li>
-          <li class="skill-item">
-            <span>WordPress · Deploy</span>
-            <div class="skill-bar" style="width:120px"><i style="width:88%"></i></div>
-          </li>
-          <li class="skill-item">
-            <span>n8n · Automatización</span>
-            <div class="skill-bar" style="width:120px"><i style="width:75%"></i></div>
-          </li>
-          <li class="skill-item">
-            <span>Looker Studio / Power BI</span>
-            <div class="skill-bar" style="width:120px"><i style="width:80%"></i></div>
-          </li>
+        <h3 class="section-title">CONTACTO</h3>
+        <ul>
+            <li>📧 Moradostin27@gmail.com</li>
+            <li>📱 322 243 8349</li>
+            <li>🌐 omora10.github.io/cv-orlando-mora</li>
         </ul>
-      </section>
 
-      <hr class="soft" />
-
-      <section aria-labelledby="tools-title">
-        <h3 id="tools-title" class="section-title">Herramientas & Plataformas</h3>
-        <div class="tag-list" aria-hidden="false">
-          <span class="chip">SII (Confecámaras)</span>
-          <span class="chip">RNT</span>
-          <span class="chip">RUES</span>
-          <span class="chip">Google Analytics</span>
-          <span class="chip">Git / GitHub</span>
-          <span class="chip">CPanel · DNS</span>
-        </div>
-      </section>
-
-      <hr class="soft" />
-
-      <section aria-labelledby="courses-title">
-        <h3 id="courses-title" class="section-title">Cursos Relevantes</h3>
-        <div style="font-size:13px; color:var(--muted); line-height:1.45">
-          <strong>Platzi:</strong> WordPress Deploy · n8n · Scrum · AI · Prompt Engineering<br/>
-          <strong>UPTC:</strong> Power BI<br/>
-          <strong>Otros:</strong> Google Workspace / Data Studio
-        </div>
-      </section>
-
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="main">
-      <section class="profile" aria-labelledby="perfil">
-        <h3 id="perfil" class="section-title">Perfil Profesional</h3>
-        <p>
-          Ingeniero de Sistemas con más de 6 años de experiencia en desarrollo web, automatización de procesos,
-          análisis de datos y transformación digital para Mipymes y entidades públicas. Manejo avanzado de Looker Studio,
-          Google Analytics, WordPress profesional y automatizaciones con n8n. Experto en plataformas públicas (SII de Confecámaras, RNT, RUES).
-          Actualmente adelanto una <strong>Especialización en Seguridad de la Información</strong> en la Universidad Internacional de La Rioja (UNIR).
-        </p>
-      </section>
-
-      <section aria-labelledby="exp" style="margin-top:6px">
-        <h3 id="exp" class="section-title">Experiencia Laboral</h3>
-
-        <article class="job" aria-labelledby="job1">
-          <div class="job-title">
-            <h4 id="job1">Cámara de Comercio de Tunja — Gestión de Sistemas</h4>
-            <div class="period">Nov 2021 – Actual</div>
-          </div>
-          <ul>
-            <li>Administración y gestión de plataformas públicas: <strong>SII, RNT, RUES</strong>.</li>
-            <li>Gestión de solicitudes y análisis de bases de datos institucionales.</li>
-            <li>Elaboración de informes técnicos y reportes estratégicos.</li>
-            <li>Desarrollo y mantenimiento de sitios web (WordPress y entornos Google).</li>
-            <li>Capacitación a más de <strong>500 empresarios</strong> en herramientas digitales y estrategias de transformación digital.</li>
-            <li>Construcción de reportes y dashboards en <strong>Looker Studio</strong> conectados a <strong>Google Analytics</strong>.</li>
-            <li>Apoyo en automatización de procesos internos con <strong>n8n</strong>.</li>
-          </ul>
-        </article>
-
-        <article class="job" aria-labelledby="job2">
-          <div class="job-title">
-            <h4 id="job2">Cámara de Comercio de Tunja — Innpulsa (Asesor TI – CTDE)</h4>
-            <div class="period">Nov 2020 – Sep 2021</div>
-          </div>
-          <ul>
-            <li>Diagnósticos tecnológicos y acompañamiento a Mipymes.</li>
-            <li>Registro, seguimiento y medición en el software <strong>CTDE</strong>.</li>
-            <li>Implementación de herramientas tecnológicas para digitalización empresarial.</li>
-          </ul>
-        </article>
-
-        <article class="job" aria-labelledby="job3">
-          <div class="job-title">
-            <h4 id="job3">Alcaldía de Tunja — Asesor Empresarial (ACTIVA-T)</h4>
-            <div class="period">Sep 2020 – Dic 2020</div>
-          </div>
-          <ul>
-            <li>Sistematización y administración de bases de datos.</li>
-            <li>Apoyo en marketing territorial y posicionamiento digital.</li>
-            <li>Asesoría a emprendedores para fortalecimiento empresarial.</li>
-          </ul>
-        </article>
-
-        <article class="job" aria-labelledby="job4">
-          <div class="job-title">
-            <h4 id="job4">UPTC — Asistente Académico (Doctorado en Educación)</h4>
-            <div class="period">Ene 2018 – Dic 2019</div>
-          </div>
-          <ul>
-            <li>Gestión académica, organización de eventos y soporte a docentes y estudiantes.</li>
-            <li>Apoyo en procesos internos, inscripciones y verificación de requisitos académicos.</li>
-          </ul>
-        </article>
-      </section>
-
-      <hr class="soft" style="margin:18px 0">
-
-      <section aria-labelledby="edu">
-        <h3 id="edu" class="section-title">Educación</h3>
-        <div style="display:flex; flex-direction:column; gap:8px">
-          <div><strong>Ingeniero de Sistemas</strong> — Fundación Universitaria Juan de Castellanos (2011–2016)</div>
-          <div><strong>Especialización en Seguridad de la Información</strong> — En curso, Universidad Internacional de La Rioja (UNIR)</div>
-          <div><strong>Bachiller Técnico en Obras Civiles</strong> — Instituto Técnico Gonzalo Suárez Rendón</div>
-        </div>
-      </section>
-
-      <hr class="soft" style="margin:18px 0">
-
-      <section aria-labelledby="courses">
-        <h3 id="courses" class="section-title">Cursos & Certificaciones</h3>
-        <ul style="margin:8px 0 0 18px; color:#111827; line-height:1.5">
-          <li>Entornos de Desarrollo y Deployment en WordPress — Platzi</li>
-          <li>Automatización de procesos con n8n — Platzi</li>
-          <li>Scrum Profesional — Platzi</li>
-          <li>Introducción a la Inteligencia Artificial — Platzi</li>
-          <li>Prompt Engineering — Platzi</li>
-          <li>Power BI — Universidad Pedagógica y Tecnológica de Colombia (UPTC)</li>
-          <li>Looker Studio & conexión con Google Analytics</li>
-          <li>Transformación Digital aplicada a Mipymes — (Programa institucional)</li>
+        <h3 class="section-title">HABILIDADES</h3>
+        <ul>
+            <li>Automatización con n8n</li>
+            <li>WordPress profesional</li>
+            <li>Looker Studio + Google Analytics</li>
+            <li>Desarrollo Web (Java, Angular, React)</li>
+            <li>Bases de datos y reportes</li>
         </ul>
-      </section>
 
-      <hr class="soft" style="margin:18px 0">
-
-      <section aria-labelledby="soft">
-        <h3 id="soft" class="section-title">Habilidades Blandas</h3>
-        <ul class="soft-list" style="margin-top:8px">
-          <li style="font-size:14px; color:#111827">Comunicación efectiva</li>
-          <li style="font-size:14px; color:#111827">Resolución de problemas</li>
-          <li style="font-size:14px; color:#111827">Pensamiento analítico</li>
-          <li style="font-size:14px; color:#111827">Trabajo en equipo</li>
-          <li style="font-size:14px; color:#111827">Adaptabilidad y formación de equipos</li>
+        <h3 class="section-title">SOFTWARE</h3>
+        <ul>
+            <li>Power BI</li>
+            <li>Looker Studio</li>
+            <li>Google Workspace</li>
+            <li>Herramientas de IA</li>
         </ul>
-      </section>
 
-    </main>
-  </div>
+        <h3 class="section-title">IDIOMAS</h3>
+        <ul>
+            <li>Español — Nativo</li>
+            <li>Inglés — B1</li>
+        </ul>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+        <div class="name">ORLANDO MORA</div>
+        <div class="subtitle">Ingeniero de Sistemas | Transformación Digital | Automatización | Seguridad de la Información</div>
+
+        <div class="section">
+            <h2>PERFIL PROFESIONAL</h2>
+            <p style="font-size: 14px; line-height: 1.6;">
+                Ingeniero de Sistemas con experiencia en automatización, análisis de datos, transformación digital y desarrollo web.  
+                Experto en n8n, WordPress, Looker Studio y Google Analytics.  
+                Manejo avanzado de plataformas públicas SII, RNT y RUES.  
+                Actualmente cursando Especialización en Seguridad de la Información – UNIR.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>EXPERIENCIA</h2>
+
+            <div class="job">
+                <div class="job-title">Coordinador TI</div>
+                <div class="job-company">Cámara de Comercio de Tunja | 2021 – Actual</div>
+                <ul>
+                    <li>Administración de plataformas: SII, RNT, RUES.</li>
+                    <li>Gestión y análisis de bases de datos institucionales.</li>
+                    <li>Informes técnicos y reportes estratégicos.</li>
+                    <li>Desarrollo y mantenimiento de sitios web institucionales.</li>
+                    <li>Capacitación a más de 500 empresarios.</li>
+                    <li>Dashboards en Looker Studio conectados a GA4.</li>
+                    <li>Automatización de procesos internos con n8n.</li>
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="job">
+                <div class="job-title">Asesor TI – CTDE</div>
+                <div class="job-company">Cámara de Comercio de Tunja – Innpulsa | 2020 – 2021</div>
+                <ul>
+                    <li>Acompañamiento tecnológico a Mipymes.</li>
+                    <li>Implementación de herramientas digitales.</li>
+                    <li>Gestión de información en plataforma CTDE.</li>
+                </ul>
+            </div>
+
+            <br>
+
+            <div class="job">
+                <div class="job-title">Asesor Empresarial</div>
+                <div class="job-company">Alcaldía de Tunja – ACTIVA-T | 2020</div>
+                <ul>
+                    <li>Sistematización de información y bases de datos.</li>
+                    <li>Marketing territorial y fortalecimiento empresarial.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h2>EDUCACIÓN</h2>
+
+            <p><strong>Especialización en Seguridad de la Información</strong><br>UNIR (En curso)</p>
+            <p><strong>Ingeniería de Sistemas</strong><br>Fundación Universitaria Juan de Castellanos</p>
+            <p><strong>Bachiller Técnico en Obras Civiles</strong><br>IT Gonzalo Suárez Rendón</p>
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
