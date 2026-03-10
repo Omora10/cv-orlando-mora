@@ -4,116 +4,138 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hoja de Vida - Orlando Mora</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #f4f4f4;
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#f4f4f4;
 }
 
-.container {
-    width: 950px;
-    margin: auto;
-    background: #fff;
-    display: grid;
-    grid-template-columns: 30% 70%;
-    min-height: 100vh;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.08);
+.container{
+width:950px;
+margin:auto;
+background:#fff;
+display:grid;
+grid-template-columns:30% 70%;
+min-height:100vh;
+box-shadow:0px 0px 15px rgba(0,0,0,0.08);
 }
 
-/* LEFT */
-.left {
-    background: #1f2f3d;
-    padding: 40px 30px;
-    color: #fff;
+/* IZQUIERDA */
+
+.left{
+background:#1f2f3d;
+padding:40px 30px;
+color:#fff;
 }
 
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: auto;
-    border: 4px solid #fff;
+.profile-pic{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+display:block;
+margin:auto;
+border:4px solid #fff;
 }
 
-.section-title {
-    font-weight: 700;
-    margin-top: 35px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: #00c3ff;
+.section-title{
+font-weight:700;
+margin-top:35px;
+margin-bottom:10px;
+font-size:14px;
+letter-spacing:1px;
+color:#00c3ff;
 }
 
-.left ul {
-    padding-left: 18px;
-    margin-top: 5px;
+.left ul{
+padding-left:18px;
+margin-top:5px;
 }
 
-.left ul li {
-    margin-bottom: 6px;
-    font-size: 13px;
+.left ul li{
+margin-bottom:6px;
+font-size:13px;
 }
 
-/* RIGHT */
-.right {
-    padding: 50px;
+/* DERECHA */
+
+.right{
+padding:50px;
 }
 
-.name {
-    font-size: 40px;
-    font-weight: 700;
-    color: #1f2f3d;
+.name{
+font-size:38px;
+font-weight:700;
+color:#1f2f3d;
 }
 
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 25px;
-    color: #555;
+.subtitle{
+font-size:17px;
+margin-bottom:25px;
+color:#555;
 }
 
-.section {
-    margin-top: 35px;
+.section{
+margin-top:35px;
 }
 
-.section h2 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #1f2f3d;
-    border-bottom: 2px solid #e0e6eb;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+.section h2{
+font-size:20px;
+font-weight:700;
+color:#1f2f3d;
+border-bottom:2px solid #e0e6eb;
+padding-bottom:5px;
+margin-bottom:15px;
 }
 
-.job-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1f2f3d;
+.job-title{
+font-size:15px;
+font-weight:600;
+color:#1f2f3d;
 }
 
-.job-company {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 8px;
+.job-company{
+font-size:14px;
+color:#555;
+margin-bottom:8px;
 }
 
-.job ul {
-    padding-left: 18px;
+.job ul{
+padding-left:18px;
 }
 
-.job ul li {
-    font-size: 13px;
-    margin-bottom: 6px;
+.job ul li{
+font-size:13px;
+margin-bottom:6px;
 }
 
-p {
-    font-size: 14px;
-    line-height: 1.6;
+p{
+font-size:14px;
+line-height:1.6;
 }
+
+/* SOLUCIÓN PARA EXPORTAR A PDF */
+
+@media print {
+
+body{
+-webkit-print-color-adjust:exact;
+print-color-adjust:exact;
+background:#fff;
+}
+
+.container{
+width:100%;
+box-shadow:none;
+}
+
+}
+
 </style>
 </head>
 
@@ -121,133 +143,151 @@ p {
 
 <div class="container">
 
-<!-- LEFT SIDE -->
+<!-- COLUMNA IZQUIERDA -->
+
 <div class="left">
 
-    <img src="https://i.imgur.com/1Q9Z1Zl.png" class="profile-pic">
+<img src="https://i.imgur.com/1Q9Z1Zl.png" class="profile-pic">
 
-    <h3 class="section-title">CONTACTO</h3>
-    <ul>
-        <li>📧 Moradostin27@gmail.com</li>
-        <li>📱 322 243 8349</li>
-        <li>🌐 linkedin.com/in/orlando-mora-082068137</li>
-    </ul>
+<h3 class="section-title">CONTACTO</h3>
+<ul>
+<li>📧 moradostin27@gmail.com</li>
+<li>📱 322 243 8349</li>
+<li>🌐 linkedin.com/in/orlando-mora-082068137</li>
+</ul>
 
-    <h3 class="section-title">COMPETENCIAS TÉCNICAS</h3>
-    <ul>
-        <li>Java | Angular | React</li>
-        <li>APIs REST seguras</li>
-        <li>Bases de datos SQL</li>
-        <li>Automatización con n8n</li>
-        <li>WordPress profesional</li>
-    </ul>
+<h3 class="section-title">COMPETENCIAS TÉCNICAS</h3>
+<ul>
+<li>Java (nivel intermedio)</li>
+<li>Angular y React (conocimientos)</li>
+<li>Bases de datos SQL</li>
+<li>Consumo de APIs REST</li>
+<li>Automatización de procesos con n8n</li>
+<li>Desarrollo y administración WordPress</li>
+</ul>
 
-    <h3 class="section-title">SEGURIDAD</h3>
-    <ul>
-        <li>OWASP Top 10</li>
-        <li>Autenticación y autorización (JWT)</li>
-        <li>Prevención de Inyección SQL</li>
-        <li>Gestión de accesos</li>
-        <li>Protección de datos</li>
-        <li>Gestión de riesgos TI</li>
-    </ul>
+<h3 class="section-title">SEGURIDAD DE LA INFORMACIÓN</h3>
+<ul>
+<li>Fundamentos de seguridad de la información</li>
+<li>Buenas prácticas OWASP</li>
+<li>Control de accesos y protección de datos</li>
+<li>Gestión básica de riesgos TI</li>
+</ul>
 
-    <h3 class="section-title">HERRAMIENTAS</h3>
-    <ul>
-        <li>Power BI</li>
-        <li>Looker Studio</li>
-        <li>Google Analytics GA4</li>
-        <li>Google Workspace</li>
-    </ul>
+<h3 class="section-title">HERRAMIENTAS</h3>
+<ul>
+<li>Power BI</li>
+<li>Looker Studio</li>
+<li>Google Analytics GA4</li>
+<li>Google Workspace</li>
+</ul>
 
-    <h3 class="section-title">IDIOMAS</h3>
-    <ul>
-        <li>Español — Nativo</li>
-        <li>Inglés — B1</li>
-    </ul>
+<h3 class="section-title">IDIOMAS</h3>
+<ul>
+<li>Español — Nativo</li>
+<li>Inglés — B1</li>
+</ul>
 
 </div>
 
-<!-- RIGHT SIDE -->
+<!-- COLUMNA DERECHA -->
+
 <div class="right">
 
-    <div class="name">ORLANDO MORA</div>
-    <div class="subtitle">
-        Ingeniero de Sistemas | Especialista en Seguridad de la Información | Desarrollo Seguro y Automatización
-    </div>
+<div class="name">ORLANDO MORA</div>
 
-    <div class="section">
-        <h2>PERFIL PROFESIONAL</h2>
-        <p>
-        Ingeniero de Sistemas y Especialista en Seguridad de la Información por la 
-        Universidad Internacional de La Rioja (UNIR) – España. 
-        Más de 6 años de experiencia en desarrollo web, automatización de procesos 
-        y gestión de plataformas institucionales.
-        Experiencia en desarrollo seguro, control de accesos, protección de datos 
-        y aplicación de buenas prácticas basadas en estándares OWASP. 
-        Liderazgo en implementación de soluciones tecnológicas estratégicas 
-        orientadas a eficiencia y seguridad.
-        </p>
-    </div>
+<div class="subtitle">
+Ingeniero de Sistemas | Especialista en Seguridad de la Información | Automatización y Desarrollo Web
+</div>
 
-    <div class="section">
-        <h2>EXPERIENCIA</h2>
+<div class="section">
+<h2>PERFIL PROFESIONAL</h2>
 
-        <div class="job">
-            <div class="job-title">Coordinador TI</div>
-            <div class="job-company">Cámara de Comercio de Tunja | 2021 – Actual</div>
-            <ul>
-                <li>Administración de plataformas SII, RNT y RUES.</li>
-                <li>Gestión y análisis de bases de datos institucionales.</li>
-                <li>Implementación de controles de seguridad en aplicaciones web.</li>
-                <li>Gestión de accesos y fortalecimiento de protección de datos.</li>
-                <li>Automatización de procesos internos con n8n.</li>
-                <li>Construcción de dashboards estratégicos en Looker Studio.</li>
-                <li>Capacitación a más de 500 empresarios en herramientas digitales.</li>
-            </ul>
-        </div>
+<p>
+Ingeniero de Sistemas y Especialista en Seguridad de la Información con experiencia en desarrollo web,
+automatización de procesos y gestión de plataformas institucionales.
+</p>
 
-        <br>
+<p>
+He participado en implementación de herramientas digitales, administración de bases de datos y
+fortalecimiento de procesos tecnológicos en entornos empresariales.
+</p>
 
-        <div class="job">
-            <div class="job-title">Asesor TI – CTDE</div>
-            <div class="job-company">Cámara de Comercio de Tunja – Innpulsa | 2020 – 2021</div>
-            <ul>
-                <li>Acompañamiento tecnológico a Mipymes.</li>
-                <li>Implementación de herramientas digitales empresariales.</li>
-                <li>Gestión de información estratégica en plataformas institucionales.</li>
-            </ul>
-        </div>
-
-        <br>
-
-        <div class="job">
-            <div class="job-title">Asistente Académico</div>
-            <div class="job-company">Universidad Pedagógica y Tecnológica de Colombia | 2018 – 2019</div>
-            <ul>
-                <li>Soporte tecnológico a docentes y estudiantes.</li>
-                <li>Gestión académica y procesos administrativos internos.</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="section">
-        <h2>EDUCACIÓN</h2>
-
-        <p>
-        <strong>Especialización en Seguridad de la Información</strong><br>
-        Universidad Internacional de La Rioja (UNIR) – España
-        </p>
-
-        <p>
-        <strong>Ingeniería de Sistemas</strong><br>
-        Fundación Universitaria Juan de Castellanos
-        </p>
-
-    </div>
+<p>
+Interés profesional en buenas prácticas de seguridad de la información, protección de datos
+y optimización de procesos mediante soluciones tecnológicas.
+</p>
 
 </div>
+
+<div class="section">
+<h2>EXPERIENCIA</h2>
+
+<div class="job">
+
+<div class="job-title">Coordinador TI</div>
+<div class="job-company">Cámara de Comercio de Tunja | 2021 – Actual</div>
+
+<ul>
+<li>Administración de plataformas institucionales como SII, RNT y RUES.</li>
+<li>Gestión y análisis de bases de datos institucionales.</li>
+<li>Automatización de procesos internos utilizando herramientas digitales.</li>
+<li>Construcción de dashboards y reportes estratégicos en Looker Studio.</li>
+<li>Capacitación a más de 500 empresarios en herramientas digitales.</li>
+<li>Apoyo en fortalecimiento de buenas prácticas de seguridad y gestión de accesos.</li>
+</ul>
+
+</div>
+
+<br>
+
+<div class="job">
+
+<div class="job-title">Asesor TI – CTDE</div>
+<div class="job-company">Cámara de Comercio de Tunja – Innpulsa | 2020 – 2021</div>
+
+<ul>
+<li>Acompañamiento tecnológico a micro, pequeñas y medianas empresas.</li>
+<li>Implementación de herramientas digitales empresariales.</li>
+<li>Orientación en procesos de transformación digital.</li>
+</ul>
+
+</div>
+
+<br>
+
+<div class="job">
+
+<div class="job-title">Asistente Académico</div>
+<div class="job-company">Universidad Pedagógica y Tecnológica de Colombia | 2018 – 2019</div>
+
+<ul>
+<li>Soporte tecnológico a docentes y estudiantes.</li>
+<li>Apoyo en procesos académicos y administrativos institucionales.</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>EDUCACIÓN</h2>
+
+<p>
+<strong>Especialización en Seguridad de la Información</strong><br>
+Universidad Internacional de La Rioja (UNIR) – España
+</p>
+
+<p>
+<strong>Ingeniería de Sistemas</strong><br>
+Fundación Universitaria Juan de Castellanos
+</p>
+
+</div>
+
+</div>
+
 </div>
 
 </body>
